@@ -13,6 +13,7 @@ Neos:
       type: 'Swift_SmtpTransport'
       options:
         host: mailhog
+        port: 1025
 
 Flowpack:
   ElasticSearch:

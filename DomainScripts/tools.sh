@@ -18,6 +18,13 @@ function fetchElasticsearchIP {
     getDockerContainerIP ${DOCKERNAME} ELASTIC_IP
 }
 
+function fetchRedisIP {
+    echo ""
+    echo -e "\e[96m\e[1m### Fetching Redis IP"
+    export DOCKERNAME=$(docker ps | grep -o ${COMPOSE_PROJECT_NAME}_${COMPOSE_REDIS_NAME}_1.*)
+    getDockerContainerIP ${DOCKERNAME} REDIS_IP
+}
+
 function fetchMailhogIP {
     echo ""
     echo -e "\e[96m\e[1m### Fetching Mailhog IP"

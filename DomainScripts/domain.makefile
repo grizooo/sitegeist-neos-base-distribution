@@ -20,3 +20,9 @@ mailhog-add::
 
 mailhog-remove::
 	@/bin/bash -c "./DomainScripts/mailhog-remove.sh"
+
+redis-add::
+	@/bin/bash -c "./DomainScripts/redis-add.sh"
+
+redis-remove::
+	@/bin/bash -c "./DomainScripts/redis-remove.sh"

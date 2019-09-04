@@ -150,18 +150,21 @@ up::
 	@$(MAKE) host-add --no-print-directory
 	@$(MAKE) elasticsearch-add --no-print-directory
 	@$(MAKE) mailhog-add --no-print-directory
+	@$(MAKE) redis-add --no-print-directory
 
 down::
 	@docker-compose down --remove-orphans
 	@$(MAKE) host-remove --no-print-directory
 	@$(MAKE) elasticsearch-remove --no-print-directory
 	@$(MAKE) mailhog-remove --no-print-directory
+	@$(MAKE) redis-remove --no-print-directory
 
 prune::
 	@docker-compose down --remove-orphans --volumes
 	@$(MAKE) host-remove --no-print-directory
 	@$(MAKE) elasticsearch-remove --no-print-directory
 	@$(MAKE) mailhog-remove --no-print-directory
+	@$(MAKE) redis-remove --no-print-directory
 
 restart::
 	$(MAKE) down

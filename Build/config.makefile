@@ -16,10 +16,6 @@ export CRED_MYSQL_PASSWORD=toor
 # elasticsearch
 export PORT_ELASTICSEARCH=9200
 
-# mailhog
-export PORT_MAILHOG_SMTP_PORT=1025
-export PORT_MAILHOG_WEB_UI_PORT=8025
-
 # ssh
 export CONF_SSH=./Docker/Config/ssh/config
 

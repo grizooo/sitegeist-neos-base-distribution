@@ -33,10 +33,21 @@ function elasticsettings {
     echo ""
     if [ -n "$(grep 'host:.*#elastic' $CONFIGURATION_SETTINGS)" ]
     then
-        echo "Changing database host from your $CONFIGURATION_SETTINGS";
+        echo "Changing elasticssearch host from your $CONFIGURATION_SETTINGS";
         sed -i -e "s/host:.*#elastic/host: $DOMAIN #elastic/g" $CONFIGURATION_SETTINGS;
     else
         echo "Not changing your $CONFIGURATION_SETTINGS";
+    fi
+}
+
+function redissettings {
+    echo ""
+    if [ -n "$(grep 'hostname:.*#redis' $CACHES_SETTINGS)" ]
+    then
+        echo "Changing redis hostname from your $CACHES_SETTINGS";
+        sed -i -e "s/hostname:.*#redis/hostname: $DOMAIN #redis/g" $CACHES_SETTINGS;
+    else
+        echo "Not changing your $CACHES_SETTINGS";
     fi
 }
 
@@ -81,10 +92,10 @@ function add {
 
             if [ -n "$(grep $DOMAIN /etc/hosts)" ]
                 then
-                    echo "$DOMAIN was added succesfully"
+                    echo -e "\033[1;32m$DOMAIN was added succesfully\e[39m"
                     echo "$(grep $DOMAIN /etc/hosts)";
                 else
-                    echo "Failed to Add $DOMAIN, Try again!";
+                    echo -e "\033[1;31mFailed to Add $DOMAIN, Try again!\e[39m";
             fi
     fi
 }

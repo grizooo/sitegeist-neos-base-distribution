@@ -1,7 +1,3 @@
-#
-# Use Redis Caching
-#
-
 Flow_Mvc_Routing_Resolve:
   backend: Neos\Cache\Backend\RedisBackend
   backendOptions:
