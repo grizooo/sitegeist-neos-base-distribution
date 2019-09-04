@@ -1,9 +1,12 @@
+PROJECT_MULTIDOMAIN_HOSTNAMES="example.intern example.dev example.com"
+
+########THESE SETTINGS BELOW SHOULD NOT BE CHANGED############
 COMPOSE_PROJECT_NAME="${PWD##*/}"
 COMPOSE_WEBSERVER_NAME="webserver"
 PROJECT_HOSTNAME="${COMPOSE_PROJECT_NAME}.intern"
 
 # PATH TO YOUR HOSTS FILE
-ETC_HOSTS=/etc/hosts
+ETC_HOSTS=/etc/resolv.conf
 CONFIGURATION_SETTINGS=Configuration/Development/Settings.yaml
 CACHES_SETTINGS=Configuration/Development/Caches.yaml
 
@@ -19,8 +22,6 @@ PROJECT_MAILHOG_HOSTNAME="${COMPOSE_PROJECT_NAME}.mailhog"
 
 COMPOSE_REDIS_NAME="redis"
 PROJECT_REDIS_HOSTNAME="${COMPOSE_PROJECT_NAME}.redis"
-
-PROJECT_MULTIDOMAIN_HOSTNAMES="example.intern example.dev example.com"
 
 export PORT_MAILHOG_SMTP_PORT=1025
 export PORT_MAILHOG_WEB_UI_PORT=8025
